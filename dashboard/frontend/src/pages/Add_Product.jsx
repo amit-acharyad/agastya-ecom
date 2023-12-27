@@ -2,14 +2,55 @@ import React, { useState } from "react";
 
 const AddProductSection = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [zIndex, setzIndex] = useState(1);
+  const [zIndex, setZIndex] = useState(1);
+
+  const [productName, setProductName] = useState("");
+  const [price, setPrice] = useState(100);
+  const [stock, setStock] = useState("");
+  const [costPrice, setCostPrice] = useState("");
+  const [checkbox1, setCheckbox1] = useState(false);
+  const [checkbox2, setCheckbox2] = useState(false);
 
   const toggleDropdown = () => {
     setIsDropdownOpen((prevState) => !prevState);
-    if (isDropdownOpen) {
-      setzIndex(1);
-    } else {
-      setzIndex(2);
+    setZIndex(isDropdownOpen ? 1 : 2);
+  };
+
+  const captureData = async (e) => {
+    e.preventDefault();
+    try {
+      console.log(price);
+      console.log(productName);
+      console.log(stock);
+      console.log(costPrice);
+      const response = await fetch("http://localhost:3000/api/v1/products", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          productName,
+          price,
+          stock,
+          costPrice,
+          shopA: checkbox1,
+          shopB: checkbox2,
+        }),
+      });
+
+      if (response.ok) {
+        console.log("Data submitted successfully");
+        setProductName("");
+        setPrice(100);
+        setStock("");
+        setCostPrice("");
+        setCheckbox1(false);
+        setCheckbox2(false);
+      } else {
+        console.error("Failed to submit data");
+      }
+    } catch (error) {
+      console.error("Error occurred:", error);
     }
   };
 
@@ -21,12 +62,12 @@ const AddProductSection = () => {
     >
       {isDropdownOpen && (
         <div
-          className={`bg-gray-950 bg-opacity-30 absolute inset-0 z-${zIndex} `}
+          className={`bg-gray-950 bg-opacity-30 absolute inset-0 z-${zIndex}`}
         ></div>
       )}
 
       <div
-        className={`mt-8 ml-20 mx-auto rounded-md absolute  top-0 w-[500px] z-${zIndex}`}
+        className={`mt-8 ml-20 mx-auto rounded-md absolute top-0 w-[500px] z-${zIndex}`}
       >
         <button
           onClick={toggleDropdown}
@@ -39,7 +80,7 @@ const AddProductSection = () => {
           <div
             className={`mt-24 p-4 mr-4 rounded-md shadow-md border bg-gray-50 z-${zIndex}`}
           >
-            <form>
+            <form onSubmit={captureData}>
               <div className="mb-4">
                 <label className="block text-sm font-semibold text-gray-600">
                   Product Name
@@ -48,6 +89,8 @@ const AddProductSection = () => {
                   type="text"
                   name="productName"
                   className="mt-1 p-2 w-full outline-none rounded-md border"
+                  value={productName}
+                  onChange={(e) => setProductName(e.target.value)}
                 />
               </div>
               <div className="mb-4">
@@ -58,6 +101,8 @@ const AddProductSection = () => {
                   type="text"
                   name="price"
                   className="mt-1 p-2 w-full outline-none rounded-md border"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
                 />
               </div>
               <div className="mb-4">
@@ -68,6 +113,8 @@ const AddProductSection = () => {
                   type="text"
                   name="stock"
                   className="mt-1 p-2 w-full outline-none rounded-md border"
+                  value={stock}
+                  onChange={(e) => setStock(e.target.value)}
                 />
               </div>
               <div className="mb-4">
@@ -78,6 +125,26 @@ const AddProductSection = () => {
                   type="text"
                   name="costPrice"
                   className="mt-1 p-2 w-full outline-none rounded-md border"
+                  value={costPrice}
+                  onChange={(e) => setCostPrice(e.target.value)}
+                />
+              </div>
+              <div>
+                <label htmlFor="101">Shop A</label>
+                <input
+                  type="checkbox"
+                  name="box1"
+                  id="101"
+                  checked={checkbox1}
+                  onChange={() => setCheckbox1(!checkbox1)}
+                />
+                <label htmlFor="102">Shop B</label>
+                <input
+                  type="checkbox"
+                  name="box2"
+                  id="102"
+                  checked={checkbox2}
+                  onChange={() => setCheckbox2(!checkbox2)}
                 />
               </div>
               <button

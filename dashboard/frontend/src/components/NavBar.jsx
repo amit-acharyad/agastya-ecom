@@ -70,8 +70,11 @@ const NavBar = () => {
           <img
             src="/agastya.png"
             alt="Agastya Logo"
-            className="h-16 w-16 ml-4 rounded-full border-spacing-1  border border-orange-700"
+            className="h-12 w-12 rounded-full border-spacing-1  border border-orange-700"
           />
+          <h1 className="text-2xl font-semibold mt-2 text-orange-600 ml-2">
+            Agastya
+          </h1>
         </div>
 
         <div>

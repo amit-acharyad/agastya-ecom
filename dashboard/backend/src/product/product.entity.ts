@@ -34,7 +34,7 @@ export class ProductEntity {
   @JoinTable()
   channels: ChannelEntity[];
 
-  @ManyToOne(() => ProfileEntity, (profile) => profile.id)
+  @ManyToOne(() => ProfileEntity, (profile) => profile.products)
   @JoinTable()
-  profiles: ProfileEntity[];
+  profiles: ProfileEntity;
 }

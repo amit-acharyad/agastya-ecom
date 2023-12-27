@@ -14,10 +14,11 @@ export class ChannelController {
   @Post('')
   async postChannel(@Body() channel: ChannelDto) {
     const createdChannel = await this.channelService.postChannel(channel);
+    return createdChannel;
     // return await this.channelService;
   }
 
-  @Post('')
+  @Post('add-to-profile')
   async addChannelToProfile(@Body() addChannelDto: AddChannelToProfileDTO) {
     return await this.channelService.addChannelToProfile(addChannelDto);
   }

@@ -9,6 +9,7 @@ export class ProfileController {
   constructor(private readonly profileService: ProfileService) {}
   @Post('')
   async createProfile(@Body() accountCreationDto: CreateProfileDTO) {
+    console.log('here1');
     return this.profileService.createUserProfile(accountCreationDto);
   }
 

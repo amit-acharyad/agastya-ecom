@@ -31,6 +31,7 @@ export class ProfileService {
     profile.name = createUserDto.name;
     profile.password = createUserDto.password;
     profile.username = createUserDto.username;
+
     return await this.profileRepository.save(profile);
   }
 

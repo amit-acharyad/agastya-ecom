@@ -4,6 +4,7 @@ import { CiSearch } from "react-icons/ci";
 import { IoFilterOutline } from "react-icons/io5";
 import { IoMdArrowDropright } from "react-icons/io";
 import Stock from "../components/productComponents/Stock";
+import Add_Product from "./Add_Product";
 const Orders = () => {
   const Stock_Quantity = [
     {
@@ -58,6 +59,7 @@ const Orders = () => {
     <div className="w-3/4">
       <div className="mt-10 mr-20">
         <p className="text-2xl">Welcome Back, Deepak</p>
+        <Add_Product />
       </div>
 
       <div className="flex  mt-20 rounded-md w-[80%] shadow-sm border border-spacing-3 border-black hover:bg-gray-50">

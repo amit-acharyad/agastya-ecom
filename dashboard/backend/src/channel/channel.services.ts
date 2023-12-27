@@ -1,10 +1,8 @@
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { ChannelEntity } from './channel.entity';
-import { retry } from 'rxjs';
 import { HttpStatus } from '@nestjs/common';
-import { type } from 'os';
-import { ProductEntity } from 'src/product/product.entity';
+import { ChannelDto } from './dtos/product.dto';
 
 export class ChannelService {
   constructor(
@@ -29,7 +27,7 @@ export class ChannelService {
     }
   }
 
-  async postChannel(channel: channelType) {
+  async postChannel(channel: ChannelDto) {
     const typeChannel = this.channelRepository.create();
     typeChannel.name = channel.name;
     typeChannel.url = channel.url;

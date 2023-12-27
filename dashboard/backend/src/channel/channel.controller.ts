@@ -1,5 +1,6 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ChannelService } from './channel.services';
+import { ChannelDto } from './dtos/product.dto';
 
 @Controller('channel')
 export class ChannelController {
@@ -10,7 +11,7 @@ export class ChannelController {
   }
 
   @Post('')
-  async postChannel(@Body() channel: channelType) {
+  async postChannel(@Body() channel: ChannelDto) {
     const createdChannel = await this.channelService.postChannel(channel);
     // return await this.channelService;
   }

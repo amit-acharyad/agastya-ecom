@@ -1,11 +1,13 @@
 import { channel } from 'diagnostics_channel';
 import { ChannelEntity } from 'src/channel/channel.entity';
+import { ProfileEntity } from 'src/profile/profile.entity';
 import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
   ManyToMany,
   JoinTable,
+  ManyToOne,
 } from 'typeorm';
 
 @Entity({ name: 'product' })
@@ -31,4 +33,8 @@ export class ProductEntity {
   @ManyToMany(() => ChannelEntity, (channel) => channel.id)
   @JoinTable()
   channels: ChannelEntity[];
+
+  @ManyToOne(() => ProfileEntity, (profile) => profile.id)
+  @JoinTable()
+  profiles: ProfileEntity[];
 }

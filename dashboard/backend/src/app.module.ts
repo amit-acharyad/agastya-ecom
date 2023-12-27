@@ -6,11 +6,13 @@ import { ConfigModule } from '@nestjs/config';
 import { config } from './ormconfig';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ChannelModule } from './channel/channel.module';
+import { ProfileModule } from './profile/profile.module';
 
 @Module({
   imports: [
     ProductModule,
     ChannelModule,
+    ProfileModule,
     TypeOrmModule.forRoot(config),
     ConfigModule.forRoot({
       isGlobal: true,

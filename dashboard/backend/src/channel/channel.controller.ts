@@ -1,5 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ChannelService } from './channel.services';
+import { ChannelDto } from './dtos/addChannel.dto';
+import { AddChannelToProfileDTO } from './dtos/addChannelToProfile.dto';
 
 @Controller('channel')
 export class ChannelController {
@@ -10,8 +12,13 @@ export class ChannelController {
   }
 
   @Post('')
-  async postChannel(@Body() channel: channelType) {
+  async postChannel(@Body() channel: ChannelDto) {
     const createdChannel = await this.channelService.postChannel(channel);
     // return await this.channelService;
+  }
+
+  @Post('')
+  async addChannelToProfile(@Body() addChannelDto: AddChannelToProfileDTO) {
+    return await this.channelService.addChannelToProfile(addChannelDto);
   }
 }

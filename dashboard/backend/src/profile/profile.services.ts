@@ -4,6 +4,7 @@ import { ProfileEntity } from './profile.entity';
 import { Repository } from 'typeorm';
 import { ProductEntity } from 'src/product/product.entity';
 import { CreateProfileDTO } from './dto/createProfileDto';
+import { getAssociatedChannelDto } from './dto/getAssociatedChannel.dto';
 
 @Injectable()
 export class ProfileService {
@@ -31,5 +32,17 @@ export class ProfileService {
     profile.password = createUserDto.password;
     profile.username = createUserDto.username;
     return await this.profileRepository.save(profile);
+  }
+
+  async getAssociatedChannel(profileId: getAssociatedChannelDto) {
+    const profile = await this.profileRepository.findOne({
+      where: { id: profileId.profileId },
+      relations: ['channels'],
+    });
+    if (!profile) throw new Error('No user with the profile id exist');
+    return {
+      channels: profile.channels,
+      count: profile.channels.length,
+    };
   }
 }

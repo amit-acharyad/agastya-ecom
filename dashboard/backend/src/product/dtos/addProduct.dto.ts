@@ -25,3 +25,8 @@ export class AddProductDto {
   @ApiProperty()
   sku: string;
 }
+
+export class MessageDto {
+  @ApiProperty()
+  message: string;
+}

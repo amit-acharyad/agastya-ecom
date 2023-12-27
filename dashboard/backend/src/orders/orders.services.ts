@@ -33,6 +33,8 @@ export class OrderService {
     newOrder.orderId = product.orderId;
     newOrder.product = pr;
     newOrder.price = product.price;
+    newOrder.title = product.title;
+    newOrder.quantity = product.qty;
 
     // const creaProduct = this.orderRepo.create({
     //   product: pr,

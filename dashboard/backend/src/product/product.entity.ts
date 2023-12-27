@@ -1,5 +1,6 @@
 import { channel } from 'diagnostics_channel';
 import { ChannelEntity } from 'src/channel/channel.entity';
+import { OrderEntity } from 'src/orders/orders.entity';
 import { ProfileEntity } from 'src/profile/profile.entity';
 import {
   Entity,
@@ -8,6 +9,8 @@ import {
   ManyToMany,
   JoinTable,
   ManyToOne,
+  OneToOne,
+  JoinColumn,
 } from 'typeorm';
 
 @Entity({ name: 'product' })
@@ -37,4 +40,8 @@ export class ProductEntity {
   @ManyToOne(() => ProfileEntity, (profile) => profile.products)
   @JoinTable()
   profiles: ProfileEntity;
+
+  @OneToOne(() => OrderEntity, (order) => order.product)
+  @JoinColumn()
+  order: OrderEntity;
 }

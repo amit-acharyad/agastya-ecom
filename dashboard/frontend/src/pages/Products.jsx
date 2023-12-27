@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { CiSearch } from "react-icons/ci";
 import { IoFilterOutline } from "react-icons/io5";
 import { IoMdArrowDropright } from "react-icons/io";
-import Stock from './components/Stock';
+import Stock from '../components/productComponents/Stock';
 const Products = () => {
       const Stock_Quantity=[
         {

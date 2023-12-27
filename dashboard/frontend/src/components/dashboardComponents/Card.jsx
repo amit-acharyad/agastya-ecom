@@ -1,8 +1,8 @@
 import React from "react";
-import Items from "../section_3/Items";
-import Numbers from "../section_3/Numbers";
-import ColorBox from "../section_3/ColorBox";
-import Piechart from "../section_3/Pie_Chart";
+import Items from "../charts/Items";
+import Numbers from "../charts/Numbers";
+import ColorBox from "../charts/ColorBox";
+import Piechart from "../charts/Pie_Chart";
 
 const Card = () => {
 

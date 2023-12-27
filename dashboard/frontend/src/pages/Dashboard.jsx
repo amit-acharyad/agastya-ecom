@@ -1,7 +1,7 @@
 import React from 'react';
-import Block from './components/Block';
-import Card from './components/Card';
-import Chart from './components/Orders';
+import Block from '../components/dashboardComponents/Block';
+import Card from '../components/dashboardComponents/Card';
+import Chart from '../components/dashboardComponents/Orders';
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { GoGraph } from "react-icons/go";
 

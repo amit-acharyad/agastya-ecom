@@ -19,11 +19,11 @@ export class ChannelEntity {
   @Column()
   url: string;
 
-  @ManyToMany(() => ProductEntity, (product) => product.id)
+  @ManyToMany(() => ProductEntity, (product) => product.channels)
   @JoinTable()
   products: ProductEntity[];
 
-  @ManyToMany(() => ProductEntity, (profile) => profile.id)
+  @ManyToMany(() => ProductEntity, (profile) => profile.channels)
   @JoinTable()
   profiles: ProfileEntity[];
 }

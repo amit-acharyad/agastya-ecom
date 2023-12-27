@@ -26,10 +26,10 @@ export class ProfileEntity {
   @Column({ nullable: true })
   totalSales: number;
 
-  @OneToMany(() => ProductEntity, (product) => product.id)
+  @OneToMany(() => ProductEntity, (product) => product.profiles)
   products: ProductEntity[];
 
-  @ManyToMany(() => ChannelEntity, (channel) => channel.id)
+  @ManyToMany(() => ChannelEntity, (channel) => channel.products)
   @JoinTable()
   channels: ChannelEntity[];
 }

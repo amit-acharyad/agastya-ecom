@@ -7,12 +7,14 @@ import { config } from './ormconfig';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ChannelModule } from './channel/channel.module';
 import { ProfileModule } from './profile/profile.module';
+import { OrdersModule } from './orders/orders.module';
 
 @Module({
   imports: [
     ProductModule,
     ChannelModule,
     ProfileModule,
+    OrdersModule,
     TypeOrmModule.forRoot(config),
     ConfigModule.forRoot({
       isGlobal: true,

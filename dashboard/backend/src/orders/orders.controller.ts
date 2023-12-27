@@ -1,9 +1,17 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, Get } from '@nestjs/common';
+import { OrderService } from './orders.services';
+import { OrderDto } from './dtos/orders.dto';
 
-@Controller('new-order')
+@Controller('orders')
 export class OrderController {
-  @Post('')
-  async newOrderComponent(@Body() orderBody: any) {
-    console.log(orderBody);
+  constructor(private orderService: OrderService) {}
+  @Post('new')
+  async newOrderComponent(@Body() orderBody: OrderDto) {
+    await this.orderService.addOrder(orderBody);
+  }
+
+  @Get('all')
+  async getAllOrders() {
+    await this.orderService.getAllOrder();
   }
 }

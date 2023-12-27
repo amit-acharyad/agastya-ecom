@@ -1,7 +1,15 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { channel } from 'diagnostics_channel';
+import { ChannelEntity } from 'src/channel/channel.entity';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  ManyToMany,
+  JoinTable,
+} from 'typeorm';
 
 @Entity({ name: 'product' })
-export class Product {
+export class ProductEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -19,4 +27,8 @@ export class Product {
 
   @Column()
   description: string;
+
+  @ManyToMany(() => ChannelEntity, (channel) => channel.id)
+  @JoinTable()
+  channels: ChannelEntity[];
 }

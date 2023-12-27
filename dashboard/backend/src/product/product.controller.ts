@@ -1,12 +1,10 @@
-import { Controller, Get, HttpStatus } from '@nestjs/common';
+import { Controller, Post, HttpStatus, Req, Body } from '@nestjs/common';
+import { productType } from './types/product.types';
 
 @Controller('/products')
 export class ProductController {
-  @Get('')
-  async getProducts() {
-    return {
-      status: HttpStatus.OK,
-      data: 'Everything is Okay',
-    };
+  @Post('')
+  async listProduct(@Body() product: productType) {
+    console.log(product);
   }
 }

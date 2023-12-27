@@ -61,7 +61,7 @@ const Orders = () => {
         <p className="text-2xl">Welcome Back, Deepak</p>
       </div>
 
-      <div className="flex  mt-20 rounded-md w-[80%] shadow-sm border border-spacing-3 border-black hover:bg-gray-50">
+      <div className="flex mt-20 rounded-md w-[80%] shadow-sm border border-spacing-3 border-black">
         <CiSearch className="text-5xl py-3 text-gray-500 rounded-md" />
         <p className="text-slate-500 mt-[10px] mr-2 text-md">|</p>
         <input

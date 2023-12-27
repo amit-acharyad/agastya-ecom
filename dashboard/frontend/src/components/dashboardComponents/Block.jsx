@@ -1,8 +1,6 @@
 export default function Block(props) {
   return (
-   
-
-    <div className="bg-white h-[173px] w-[300px] mb-6 shadow-md cursor-pointer rounded-xl hover:bg-slate-50 hover:shadow-lg">
+    <div className="bg-white h-[173px] w-[300px] mb-6 shadow-md  rounded-xl">
       <div className="flex justify-between">
         <h1 className=" text-4xl font-semibold pl-3 p-4">{props.Data.label}</h1>
         <props.Data.list className="text-5xl cursor-pointer mr-3 my-3  ml-4  " />

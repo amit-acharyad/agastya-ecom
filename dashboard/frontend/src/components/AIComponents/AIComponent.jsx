@@ -41,7 +41,7 @@ export function AiComponent() {
   return (
     <div className="ml-56">
       <div className="w-[57%] mt-10 font-semibold text-3xl  rounded-md  py-2 px-2">
-        <p>Might these AI Analysis be relevant for you!</p>
+        <p>Might these AI Analysis be relevant for you!!</p>
       </div>
       <div className="mt-10 w-full h-[529px] overflow-scroll overflow-x-hidden">
         <div className="w-[60%]">

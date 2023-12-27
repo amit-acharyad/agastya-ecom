@@ -4,6 +4,7 @@ import Order from "./pages/Order";
 import Channels from "./pages/Channels";
 import Dashboard from "./pages/Dashboard";
 import App from "./App";
+import ConfirmationPage from "./pages/ConformationPage";
 import { AiComponent } from "./components/AIComponents/AIComponent";
 
 export default createBrowserRouter([
@@ -30,6 +31,10 @@ export default createBrowserRouter([
       {
         path: "/ai",
         element: <AiComponent />,
+      },
+      {
+        path: "/confirmation/:channelId",
+        element: <ConfirmationPage />,
       },
     ],
   },

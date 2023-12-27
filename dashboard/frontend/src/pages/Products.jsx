@@ -98,7 +98,7 @@ const Orders = () => {
           </div>
           <div>
             {isDropdownOpen && (
-              <div className="bg-gray-50 absolute rounded-md  pl-6 py-1 border border-spacing-1 text-black w-[150px]">
+              <div className="bg-gray-50 absolute rounded-md cursor-pointer  pl-6 py-1 border border-spacing-1 text-black w-[150px]">
                 <div className="py-1 text-lg ">Iphone:30</div>
                 <div className="py-1 text-lg ">Iphone:30</div>
               </div>

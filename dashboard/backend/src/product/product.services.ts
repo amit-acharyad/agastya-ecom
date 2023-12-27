@@ -18,7 +18,6 @@ export class ProductService {
   ) {}
 
   async addProducts(product: AddProductDto) {
-    console.log(product.profileId);
     const user = await this.profileRepo.findOne({
       where: { id: product.profileId },
       relations: ['products', 'channels'],
@@ -40,7 +39,12 @@ export class ProductService {
       if (foundChannel) {
         newProduct.channels.push(foundChannel);
         const url = foundChannel.url;
-        console.log(url);
+
+        const fetchedData = await fetch(`${url}/products`, {
+          method: 'POST',
+          body: JSON.stringify(newProduct),
+        });
+        console.log(await fetchedData.json());
         //send post data to backend
       }
     }

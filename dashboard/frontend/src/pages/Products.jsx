@@ -59,14 +59,13 @@ const Orders = () => {
     <div className="w-3/4">
       <div className="mt-10 mr-20">
         <p className="text-2xl">Welcome Back, Deepak</p>
-        <Add_Product />
       </div>
 
       <div className="flex  mt-20 rounded-md w-[80%] shadow-sm border border-spacing-3 border-black hover:bg-gray-50">
         <CiSearch className="text-5xl py-3 text-gray-500 rounded-md" />
         <p className="text-slate-500 mt-[10px] mr-2 text-md">|</p>
         <input
-          className=" w-[100%] outline-none text-gray-500 rounded-md hover:bg-gray-50"
+          className=" w-[100%] outline-none text-gray-500 rounded-md"
           type="text"
           value={inputValue}
           onChange={handleChange}
@@ -109,6 +108,7 @@ const Orders = () => {
         </div>
       </div>
       <Stock />
+      <Add_Product />
     </div>
   );
 };

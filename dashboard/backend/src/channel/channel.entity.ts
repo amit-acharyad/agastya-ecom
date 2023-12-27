@@ -1,4 +1,5 @@
 import { ProductEntity } from 'src/product/product.entity';
+import { ProfileEntity } from 'src/profile/profile.entity';
 import {
   Column,
   Entity,
@@ -21,4 +22,8 @@ export class ChannelEntity {
   @ManyToMany(() => ProductEntity, (product) => product.id)
   @JoinTable()
   products: ProductEntity[];
+
+  @ManyToMany(() => ProductEntity, (profile) => profile.id)
+  @JoinTable()
+  profiles: ProfileEntity[];
 }

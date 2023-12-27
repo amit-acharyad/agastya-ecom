@@ -2,7 +2,6 @@ import { Get, Inject, Injectable, Req } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { ProductEntity } from './product.entity';
 import { Repository } from 'typeorm';
-import { productType } from './types/product.types';
 import { AddProductDto } from './dtos/addProduct.dto';
 import { ProfileEntity } from 'src/profile/profile.entity';
 import { ChannelEntity } from 'src/channel/channel.entity';

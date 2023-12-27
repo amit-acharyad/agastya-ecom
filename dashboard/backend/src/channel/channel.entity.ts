@@ -1,3 +1,4 @@
+import { OrderEntity } from 'src/orders/orders.entity';
 import { ProductEntity } from 'src/product/product.entity';
 import { ProfileEntity } from 'src/profile/profile.entity';
 import {
@@ -5,6 +6,7 @@ import {
   Entity,
   JoinTable,
   ManyToMany,
+  OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
@@ -26,4 +28,7 @@ export class ChannelEntity {
   @ManyToMany(() => ProductEntity, (profile) => profile.channels)
   @JoinTable()
   profiles: ProfileEntity[];
+
+  @OneToOne(() => OrderEntity, (order) => order.channel)
+  order: OrderEntity;
 }

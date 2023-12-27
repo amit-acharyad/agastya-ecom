@@ -1,11 +1,11 @@
 import React from "react";
-import { FaReact } from "react-icons/fa6";
 import NavItem from "./NavItem";
 import { TbBorderStyle2 } from "react-icons/tb";
 import { RiHome2Line } from "react-icons/ri";
 import { RiWechatChannelsFill } from "react-icons/ri";
 import { MdAir, MdKey, MdProductionQuantityLimits } from "react-icons/md";
 import { useState } from "react";
+
 const navOption = [
   {
     id: 1,
@@ -52,36 +52,35 @@ const navOption = [
 ];
 
 const NavBar = () => {
-  const [navOptions, SetNavOPtions] = useState(navOption);
-  const updatenav = (i) => {
-    const updatenavs = navOptions.map((n) => {
-      if (n.id != i) {
-        return {
-          ...n,
-          isActive: false,
-        };
-      } else {
-        return {
-          ...n,
-          isActive: true,
-        };
-      }
-    });
+  const [navOptions, setNavOptions] = useState(navOption);
 
-    SetNavOPtions(updatenavs);
+  const updateNav = (id) => {
+    const updatedNavs = navOptions.map((nav) => ({
+      ...nav,
+      isActive: nav.id === id,
+    }));
+
+    setNavOptions(updatedNavs);
   };
+
   return (
     <>
       <div className="min-h-screen w-72  flex-col p-5 pt-8 pr-[120px]">
-        <div className="flex mb-8">
-          <FaReact className="text-6xl mr-2" />
-          <h1 className="font-semibold text-2xl pt-4">Agastya</h1>
+        <div className="flex">
+          <img
+            src="/agastya.png"
+            alt="Agastya Logo"
+            className="h-12 w-12 rounded-full border-spacing-1  border border-orange-700"
+          />
+          <h1 className="text-2xl font-semibold mt-2 text-orange-600 ml-2">
+            Agastya
+          </h1>
         </div>
 
         <div>
-          {navOptions.map((item, index) => {
-            return <NavItem key={index} data={item} update={updatenav} />;
-          })}
+          {navOptions.map((item) => (
+            <NavItem key={item.id} data={item} update={updateNav} />
+          ))}
         </div>
       </div>
     </>

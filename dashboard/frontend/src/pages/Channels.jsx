@@ -7,9 +7,7 @@ const ChannelPage = () => {
     { id: 2, name: "Sasto Deal" },
   ];
 
-  const handleAddChannel = (channelId) => {
-    console.log(`Added channel with ID ${channelId}`);
-  };
+  const handleAddChannel = (channelId) => {};
 
   return (
     <div className="container flex-col mx-auto mt-8">
@@ -23,7 +21,7 @@ const ChannelPage = () => {
             key={channel.id}
             className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-4 mb-4"
           >
-            <div className="shadow-inner border p-5 rounded-md h-full flex flex-col">
+            <div className="p-5 border border-black rounded-sm border-spacing-0 h-full flex flex-col">
               <h2 className="text-2xl font-semibold text-blue-900  mb-8">
                 {channel.name}
               </h2>

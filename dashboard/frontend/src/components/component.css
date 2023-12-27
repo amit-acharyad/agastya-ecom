@@ -1,0 +1,53 @@
+.question-container{
+    width: 80vw;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+    padding: 10px;
+ 
+}
+.question{
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    width: 40%;
+    text-overflow: clip;
+    background: #516297;
+    color: rgb(255, 253, 253);
+    padding: 10px;
+    border-radius: 10px;
+    
+}
+
+.answer{
+    display: flex;
+    flex-direction: row-reverse;
+    
+}
+.answer-text{
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 20px;
+    text-overflow: clip;
+    width: 40%;
+    background-color: #8c8a8c;
+    padding: 10px;
+    color: rgb(230, 228, 228);
+    border-radius: 10px;
+   
+}
+
+.input-question{
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    width: 70%;
+    border-radius: 10px;
+
+}
+
+.input-component{
+    display: flex;
+    justify-content: center;
+}

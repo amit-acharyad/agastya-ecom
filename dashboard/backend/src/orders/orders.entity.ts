@@ -23,6 +23,12 @@ export class OrderEntity {
   @Column()
   orderId: string;
 
+  @Column()
+  title: string;
+
+  @Column()
+  quantity: number;
+
   @OneToOne(() => ProductEntity, (product) => product.order, { cascade: true })
   @JoinColumn()
   product: ProductEntity;

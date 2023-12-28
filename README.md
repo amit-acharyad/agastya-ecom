@@ -1,26 +1,54 @@
 
 # Agastya Ecommerce Suite
+## Overview
 
-Agastya ecommerce suite is a wholesome ecommerce suite for the sellers to easily track and manage their
+Agastya E-commerce Suite is a centralized solution for sellers, offering key features to track, manage, and gain insights into their e-commerce operations.
 
-- Inventory
-- Orders
-- Sales Metric and many more
+## Core Features
+
+### Centralized Hub:
+
+- Seamless integration across multiple platforms for efficient management.
+
+### Real-Time AI Updates:
+
+- Instantaneous AI-driven updates for quick response to market changes.
+
+### Robust Order Management:
+
+- Efficient system for organized order processing.
+
+### AI-Powered Analytics and Demand Forecasting:
+
+- In-depth analytics and demand forecasting using AI for informed decision-making.
+
+
 
 
 # Tech Stack Used
- ```
-    React for frontend of Admin Dashboard
-    NestJs for the backend of Admin Dashboard
-    Remix for the dummy store frontend
-    Vendure for the admin dashboard of dummy store
-    Langchain for the chaining tool for RAG
 
-```
+- Frontend of Admin Dashboard:
+  - React
+
+- Backend of Admin Dashboard:
+  - NestJs
+
+- Dummy Store Frontend:
+  - Remix
+
+- Admin Dashboard of Dummy Store:
+  - Vendure
+
+- Chaining Tool for RAG:
+  - Langchain
+
+- Database:
+  - PostgreSQL
+  - SQLite
 
 # Running the Project Locally
 
-As for the MVP we have used two of the dummy stores so installing the project locally might be some hazzle. We were really keen to use docker but due to time limitations we were unable to do it. So, to run the project locally.
+For the MVP, we utilized two placeholder stores, intending to eventually integrate various e-commerce platforms into the complete product. Unfortunately, due to time constraints, Docker implementation was deferred. Consequently, to locally run the project, cloning is necessary. Please follow the steps below:
 
 ```
 
@@ -28,14 +56,16 @@ git clone https://github.com/bhusal-rj/agastya-ecom
 
  ```
 
-After cloning let's go inside the agastya-ecom.
-
-Afterwards run 
-
+Once the cloning process is complete, navigate into the agastya-ecom directory:
+ ```
+cd agastya-ecom
 ```
+
+Next, execute the following command to install all the npm packages recursively:
+```
+
 npm run install-all
 
 ```
-which lets you install all the npm packages recursively
-
+This will ensure that all the necessary dependencies are installed for the project.
 

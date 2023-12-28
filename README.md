@@ -24,7 +24,12 @@ As for the MVP we have used two of the dummy stores so installing the project lo
 
 ``` git clone https://github.com/bhusal-rj/agastya-ecom ```
 
-After cloning let's go inside the agastya-ecom. If you only want to use the dashboard then what you can do is
+After cloning let's go inside the agastya-ecom.
+
+Afterwards run 
+
+```npm install --recursive```
+which lets you install all the npm packages recursively
 
 ```
 ```

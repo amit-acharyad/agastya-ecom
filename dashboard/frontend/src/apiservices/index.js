@@ -1,6 +1,6 @@
 import { deleteRequest, getRequest, postRequest, putRequest } from "./fetch";
 
-// export const getProducts = async () => {
-//     const res = await getRequest("app/products", "jwt");
-//     return res.data;
-//   };
+export const getOrders = async () => {
+    const res = await getRequest("/orders/all");
+    return res.data;
+  };

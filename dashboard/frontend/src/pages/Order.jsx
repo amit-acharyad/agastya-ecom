@@ -4,6 +4,8 @@ import { CiSearch } from "react-icons/ci";
 import { IoFilterOutline } from "react-icons/io5";
 import { IoMdArrowDropright } from "react-icons/io";
 import Stock from "../components/productComponents/Stock";
+import { useEffect } from "react";
+import { getOrders } from "../apiservices";
 const Orders = () => {
   const Stock_Quantity = [
     {
@@ -53,11 +55,18 @@ const Orders = () => {
   const handleChange = (e) => {
     setInputValue(e.target.value);
   };
+const [orders,setOrders]=useState("");
+  useEffect(()=>{
+      getOrders().then((response)=>{
+          setOrders(response.data);
+      });
+  });
 
   return (
     <div className="w-3/4">
       <div className="mt-10 mr-20">
         <p className="text-2xl">Welcome Back, Deepak</p>
+        
       </div>
 
       <div className="flex  mt-20 rounded-md w-[80%] shadow-sm border border-spacing-3 border-black hover:bg-gray-50">
@@ -106,7 +115,12 @@ const Orders = () => {
           </div>
         </div>
       </div>
-      <Stock />
+      {orders.length>0 ? (
+         <Stock orders={orders}/>
+      ) : (
+        <p>Loading orders.......</p>
+      )}
+      
     </div>
   );
 };

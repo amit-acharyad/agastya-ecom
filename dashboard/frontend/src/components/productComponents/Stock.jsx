@@ -2,7 +2,7 @@ import React from 'react'
 import { MdModeEdit } from "react-icons/md";
 import { IoEyeSharp } from "react-icons/io5";
 import { MdDelete } from "react-icons/md";
-const Stock = () => {
+const Stock = ({orders}) => {
     const SN=[1,2,3,]
     const Product_Name=["Iphone","Ipad","Smart watch"]
     const SKU=["Iphone-12-pro","xyz232","2xdyzemon"]
@@ -14,8 +14,8 @@ const Stock = () => {
                <p className='text-lg font-semibold'>SN</p>
                <div>
                 {
-                    SN.map((CurrEle)=>{
-                        return( <p className='text-gray-500 text-sm py-1'>{CurrEle}</p> )
+                    orders.map((order)=>{
+                        return( <p className='text-gray-500 text-sm py-1'>{order.id}</p> )
                     })
                 }
             </div>
@@ -25,19 +25,19 @@ const Stock = () => {
                <p className='text-lg font-semibold'>Product Name</p>
                <div>
                 {
-                    Product_Name.map((CurrEle)=>{
-                        return( <p className='text-gray-500 text-sm py-1'>{CurrEle}</p> )
+                    orders.map((order)=>{
+                        return( <p className='text-gray-500 text-sm py-1'>{order.title}</p> )
                     })
                 }
             </div>
             </div>
 
             <div>
-               <p className='text-lg font-semibold'>SKU</p>
+               <p className='text-lg font-semibold'>Price</p>
                <div>
                 {
-                    SKU.map((CurrEle)=>{
-                        return( <p className='text-gray-500 text-sm py-1'>{CurrEle}</p> )
+                   orders.map((order)=>{
+                        return( <p className='text-gray-500 text-sm py-1'>{order.price}</p> )
                     })
                 }
             </div>
@@ -47,14 +47,14 @@ const Stock = () => {
                <p className='text-lg font-semibold'>Stock Quantity</p>
                <div>
                 {
-                    Quantity.map((CurrEle)=>{
-                        return( <p className='text-gray-500 text-sm py-1'>{CurrEle}</p> )
+                    orders.map((order)=>{
+                        return( <p className='text-gray-500 text-sm py-1'>{order.quantity}</p> )
                     })
                 }
             </div>
             </div>
 
-            <div>
+            {/* <div>
                <p className='text-lg font-semibold'>Category</p>
                <div>
                 {
@@ -63,7 +63,7 @@ const Stock = () => {
                     })
                 }
             </div>
-            </div>
+            </div> */}
 
             <div>
                <p className='text-lg font-semibold'>Actions</p>

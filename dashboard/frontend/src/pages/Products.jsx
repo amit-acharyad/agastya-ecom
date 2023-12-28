@@ -110,7 +110,7 @@ const Orders = () => {
           </div>
         </div>
       </div>
-      <Stock />
+      {/* <Stock /> */}
       <Add_Product />
     </div>
   );

@@ -28,7 +28,10 @@ After cloning let's go inside the agastya-ecom.
 
 Afterwards run 
 
-```npm install --recursive```
+```
+npm run install-all
+
+```
 which lets you install all the npm packages recursively
 
 ```

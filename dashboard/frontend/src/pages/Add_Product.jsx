@@ -6,8 +6,10 @@ const AddProductSection = () => {
 
   const [productName, setProductName] = useState("");
   const [price, setPrice] = useState(100);
+  const [sku, setsku] = useState(0);
   const [stock, setStock] = useState("");
   const [costPrice, setCostPrice] = useState("");
+  const [description, setdescription] = useState("");
   const [checkbox1, setCheckbox1] = useState(false);
   const [checkbox2, setCheckbox2] = useState(false);
 
@@ -30,8 +32,10 @@ const AddProductSection = () => {
         },
         body: JSON.stringify({
           productName,
+          description,
           price,
           stock,
+          sku,
           costPrice,
           shopA: checkbox1,
           shopB: checkbox2,
@@ -78,7 +82,7 @@ const AddProductSection = () => {
 
         {isDropdownOpen && (
           <div
-            className={`mt-24 p-4 mr-4 rounded-md shadow-md border bg-gray-50 z-${zIndex}`}
+            className={`mt-18 p-4 mr-4 rounded-md shadow-md border bg-gray-50 z-${zIndex}`}
           >
             <form onSubmit={captureData}>
               <div className="mb-4">
@@ -95,6 +99,18 @@ const AddProductSection = () => {
               </div>
               <div className="mb-4">
                 <label className="block text-sm font-semibold text-gray-600">
+                 Description
+                </label>
+                <input
+                  type="text"
+                  name="description"
+                  className="mt-1 p-2 w-full outline-none rounded-md border"
+                  value={description}
+                  onChange={(e) => setdescription(e.target.value)}
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-sm font-semibold text-gray-600">
                   Price
                 </label>
                 <input
@@ -103,6 +119,18 @@ const AddProductSection = () => {
                   className="mt-1 p-2 w-full outline-none rounded-md border"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-sm font-semibold text-gray-600">
+                 SKU
+                </label>
+                <input
+                  type="text"
+                  name="sku"
+                  className="mt-1 p-2 w-full outline-none rounded-md border"
+                  value={sku}
+                  onChange={(e) => setsku(e.target.value)}
                 />
               </div>
               <div className="mb-4">

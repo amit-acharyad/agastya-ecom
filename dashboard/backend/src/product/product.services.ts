@@ -25,6 +25,7 @@ export class ProductService {
   ) {}
 
   async addProducts(product: AddProductDto) {
+    console.log(product)
     const user = await this.profileRepo.findOne({
       where: { id: product.profileId },
       relations: ['products', 'channels'],
@@ -32,6 +33,7 @@ export class ProductService {
 
     const newProduct = {
       sku: product.sku,
+      stock: product.stock,
       costprice: product.costPrice,
       description: product.description,
       title: product.productName,
@@ -39,6 +41,7 @@ export class ProductService {
       channels: [],
     };
     console.log(newProduct);
+    if(product.channels!=null){
     for (let channel of product.channels) {
       const foundChannel = await this.channelRepo.findOne({
         where: { id: channel },
@@ -59,6 +62,7 @@ export class ProductService {
         //send post data to backend
       }
     }
+  }
     await this.productRepository.save(newProduct);
   }
 

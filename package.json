@@ -1,0 +1,16 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start-frontend": "cd dashboard && cd frontend && npm run dev",
+    "start-backend": "cd dashboard && cd backend && npm start",
+    "install-all": "cd dashboard && cd frontend && npm install && cd ../backend && npm install"
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+
+  }
+}
